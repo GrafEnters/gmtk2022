@@ -23,6 +23,10 @@ public class BulletWithRay : Bullet {
         _lineRenderer.SetPosition(1, _startPoint);
     }
 
+    protected override void OnCollisionEnter(Collision collision) {
+       Destroy(gameObject);
+    }
+
     private void OnDestroy() {
         Destroy(_lineRenderer.gameObject, LineDissapearTime);
     }

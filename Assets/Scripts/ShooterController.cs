@@ -26,11 +26,14 @@ public class ShooterController : MonoBehaviour {
     private LineRenderer _lineRenderer;
 
     public bool canChangeByNumbers = false;
+    public bool lockShooting = false;
     private void Awake() {
         BulletsHolder = _bulletsHolder;
     }
 
     void Update() {
+        if(lockShooting)
+            return;
         if (Input.GetMouseButton(0)) {
             Vector3 target;
             Ray raycastRay = Camera.main.ScreenPointToRay(Input.mousePosition);

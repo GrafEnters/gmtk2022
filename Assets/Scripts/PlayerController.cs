@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour {
 
     private bool isAutoJump;
     private Vector3 move;
-    private bool LockControls;
+    public bool LockControls;
     public bool isGrounded;
     public bool isDashing;
     public float dashCurrentTime = 0;
