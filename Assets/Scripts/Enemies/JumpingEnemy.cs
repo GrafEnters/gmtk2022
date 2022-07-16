@@ -17,6 +17,9 @@ public class JumpingEnemy : Enemy {
   private void Jump() {
       isJumping = true;
       Vector3 dir = (PlayerController.BodyPosition - transform.position).normalized * JumpDistance + Vector3.up * Jumpheight;
+      Vector3 noY = (PlayerController.BodyPosition - transform.position);
+      noY.y = 0;
+      transform.rotation = Quaternion.LookRotation(noY, Vector3.up);
       AddImpulse(dir);
       StartCoroutine(JumpCoroutine());
       //Rigidbody.AddRelativeForce(new Vector3(0, 5f, 0), ForceMode.Impulse);
