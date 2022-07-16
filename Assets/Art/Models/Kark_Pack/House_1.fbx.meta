@@ -3,7 +3,17 @@ guid: e3b24be67ebfe8f40a9e4324f019e04c
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KarkCardboard
+    second: {fileID: 2100000, guid: 434fad6b01d001442b9f1a102260cd4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KarkCardboardPaintedRed
+    second: {fileID: 2100000, guid: e7f38e25d84682942aeeaf911ba114e8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
