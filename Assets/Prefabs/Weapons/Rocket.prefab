@@ -5026,7 +5026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 25
   DestroyTime: 10
-  knockbackForce: 100
+  knockbackForce: 40
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1

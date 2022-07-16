@@ -545,7 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 0
   DestroyTime: 30
-  knockbackForce: 100
+  knockbackForce: 40
   explosion: {fileID: 5211330402217764399, guid: 7aea8b8bde1c84044a8d4d17144f34d9, type: 3}
 --- !u!1 &2688169216984550095
 GameObject:
