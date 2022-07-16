@@ -98,4 +98,8 @@ public class PlayerController : MonoBehaviour {
         _currentSideFacingTop = curSide;
         bodyTargetRotation = Quaternion.Euler(SidesRotation[_currentSideFacingTop]);
     }
+
+    public void TakeDamage(Vector3 from) {
+        
+    }
 }

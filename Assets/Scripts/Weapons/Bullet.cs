@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
@@ -8,6 +6,7 @@ public class Bullet : MonoBehaviour {
     public float knockbackForce = 3f;
 
     private Vector3 direction;
+    private bool isEnemy;
 
     public virtual void ShootMe(Vector3 dir) {
         direction = dir;
@@ -19,7 +18,10 @@ public class Bullet : MonoBehaviour {
     }
 
     protected virtual void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.TryGetComponent(out Enemy enemy)) {
+        if (isEnemy && collision.gameObject.TryGetComponent(out PlayerController playerController)) {
+            playerController.TakeDamage(collision.contacts[0].normal * -1);
+        }
+        else if (collision.gameObject.TryGetComponent(out Enemy enemy)) {
             Debug.Log("Hitted enemy");
             enemy.AddImpulse(transform.forward * bulletSpeed * knockbackForce);
         }
