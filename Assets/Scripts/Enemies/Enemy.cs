@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour {
     public float DamageRecall = 0.3f;
     public float hp = 3;
+    public float DeaggroDistance = 40f;
 
     [SerializeField]
     protected NavMeshAgent navAgent;
@@ -29,6 +30,10 @@ public class Enemy : MonoBehaviour {
     protected virtual void Update() {
         if (isAwake && navAgent.enabled) {
             Move();
+        }
+
+        if (Vector3.Magnitude(transform.position - PlayerController.BodyPosition) > DeaggroDistance) {
+            isAwake = false;
         }
     }
 
@@ -73,4 +78,16 @@ public class Enemy : MonoBehaviour {
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("Player")) {
+            isAwake = true;
+        }
+    }
+
+   /* private void OnTriggerExit(Collider other) {
+        if (other.gameObject.CompareTag("Player")) {
+            isAwake = false;
+        }
+    }*/
 }
