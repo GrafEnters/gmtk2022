@@ -14,6 +14,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: KarkCardboardPainted
     second: {fileID: 2100000, guid: 40cb804a067c2a945a79a322b93d7361, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KarkCardboardPaintedRed
+    second: {fileID: 2100000, guid: e7f38e25d84682942aeeaf911ba114e8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

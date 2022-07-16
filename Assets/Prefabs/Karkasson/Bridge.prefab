@@ -102,7 +102,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 0c9e82a2bc73ad14f8aea992c6fd39ec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 523a8eae9f7dfe64c95b8226d845cb0b, type: 2}
+      objectReference: {fileID: 2100000, guid: 434fad6b01d001442b9f1a102260cd4e, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c9e82a2bc73ad14f8aea992c6fd39ec, type: 3}
       propertyPath: m_Name
       value: Bridge
