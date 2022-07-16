@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour {
         Rigidbody.useGravity = true;
     }
 
-    protected void SwitchToNavMesh() {
+    protected virtual void SwitchToNavMesh() {
         navAgent.enabled = true;
         /*if (navAgent.enabled) {
             Vector3 pos = transform.position;

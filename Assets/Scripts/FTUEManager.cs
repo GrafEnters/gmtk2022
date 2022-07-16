@@ -17,12 +17,12 @@ public class FTUEManager : MonoBehaviour {
     }
 
     private IEnumerator FirstCutScene() {
-        PlayerController.LockControls = true;
+       //PlayerController.LockControls = true;
         VerticalMouseLook.enabled = false;
         CameraAim.enabled = false;
         ShooterController.lockShooting = true;
         yield return new WaitForSeconds(cutsceneTime);
-        PlayerController.LockControls = false;
+        //PlayerController.LockControls = false;
         VerticalMouseLook.enabled = true;
         CameraAim.enabled = true;
         ShooterController.lockShooting = false;

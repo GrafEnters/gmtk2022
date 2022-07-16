@@ -1,20 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour {
     [Header("Movement")]
     public float speed;
 
     public float sideSpeed;
-
-    private float _gravityAcceleration;
-    public float gravityValue = 3f;
-    public float dashTime = 1f;
-    public float dashSpeed = 1f;
-    public float dashheight = 1f;
+    public float maxVelocity = 10;
+    public float dashHeight = 1f;
     public float dashHorizontalSpeed = 1f;
 
     [Header("Other")]
@@ -23,28 +16,28 @@ public class PlayerController : MonoBehaviour {
     public ShooterController ShooterController;
     public Transform groundSphere;
 
-    public CharacterController Controller;
-
     public Transform body;
 
-    private bool isAutoJump;
-    private Vector3 move;
-    public bool LockControls;
+    private int _currentSideFacingTop;
+    private Vector3 _move;
     public bool isGrounded;
-    public bool isDashing;
-    public float dashCurrentTime = 0;
-    public Vector3 dashVector;
-    public AnimationCurve dashCurve;
-    public AnimationCurve rotateCurve;
-    public Quaternion targetRotation;
-    public Quaternion beforeRotation;
-    public int currentSideFacingTop;
-    public Quaternion accumulatedRotations;
     public static Vector3 BodyPosition;
-    public List<Transform> sides;
+    public Rigidbody rb;
+
+    public Quaternion bodyTargetRotation;
+
+    private static readonly Vector3[] SidesRotation = new[] {
+        Vector3.zero,
+        new Vector3(0, 0, -90),
+        new Vector3(90, 0, 0),
+        new Vector3(-90, 0, 0),
+        new Vector3(0, 0, 90),
+        new Vector3(0, 0, 180),
+    };
 
     private void Awake() {
         BodyPosition = body.transform.position;
+        bodyTargetRotation = body.transform.localRotation;
     }
 
     private void Start() {
@@ -53,108 +46,56 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update() {
+        if (Input.GetButtonDown("Jump") && isGrounded) {
+            Dash();
+        }
         BodyPosition = body.transform.position;
-        move = Vector3.zero;
-        if (!LockControls) {
-            if (!isDashing) {
-                Move();
-            }
+    }
 
-            if (Input.GetButtonDown("Jump") && isGrounded && !isDashing) {
-                StartDash();
-            }
+    void FixedUpdate() {
+        isGrounded = Physics.CheckSphere(groundSphere.position, groundSphere.lossyScale.x, groundLayerMask);
+        Move();
 
-            if (isGrounded && !isDashing && isAutoJump) {
-                StartDash();
-            }
-        }
-
-        if (isDashing) {
-            DashCoroutine();
-        }
-
-        Gravity();
-        Controller.Move(move * Time.deltaTime);
+        body.localRotation = Quaternion.Lerp(body.localRotation, bodyTargetRotation, 0.3f);
     }
 
     private void Move() {
-        move += transform.right * (Input.GetAxis("Horizontal") * sideSpeed);
-        move += transform.forward * (Input.GetAxis("Vertical") * speed);
-    }
+        rb.AddForce(transform.right * (Input.GetAxis("Horizontal") * sideSpeed), ForceMode.VelocityChange);
+        rb.AddForce(transform.forward * (Input.GetAxis("Vertical") * speed), ForceMode.VelocityChange);
+        Vector3 horSpeed = rb.velocity;
+        horSpeed.y = 0;
 
-    private void Gravity() {
-        isGrounded = Physics.CheckSphere(groundSphere.position, groundSphere.localScale.x, groundLayerMask);
-
-        if (isGrounded && _gravityAcceleration > 0) {
-            _gravityAcceleration = 0f;
+        if (horSpeed.magnitude > maxVelocity) {
+            horSpeed = horSpeed.normalized * maxVelocity;
+            horSpeed.y = rb.velocity.y;
+            rb.velocity = horSpeed;
         }
-
-        _gravityAcceleration += gravityValue * Time.deltaTime;
-        move += Vector3.down * _gravityAcceleration;
     }
 
-    private void StartDash() {
-        isDashing = true;
-        dashVector = Vector3.zero;
-        dashCurrentTime = 0;
-        beforeRotation = body.localRotation;
-        Vector3 sideRotation = Vector3.zero;
-
-        Matrix4x4 matrix4X4 = body.worldToLocalMatrix;
-
-        if (Input.GetAxis("Horizontal") != 0) {
-            dashVector = transform.right * (Input.GetAxis("Horizontal") * dashHorizontalSpeed);
-            sideRotation = Input.GetAxis("Horizontal") > 0
-                ? matrix4X4.MultiplyVector(body.forward) * -1
-                : matrix4X4.MultiplyVector(body.forward);
-            ;
-        } else if (Input.GetAxis("Vertical") != 0) {
+    private void Dash() {
+        Vector3 dashVector = Vector3.zero;
+        if (Input.GetAxis("Vertical") != 0) {
             dashVector = transform.forward * (Input.GetAxis("Vertical") * dashHorizontalSpeed);
-            sideRotation = Input.GetAxis("Vertical") > 0
-                ? matrix4X4.MultiplyVector(body.right)
-                : matrix4X4.MultiplyVector(body.forward) * -1;
+        } else if (Input.GetAxis("Horizontal") != 0) {
+            dashVector = transform.right * (Input.GetAxis("Horizontal") * dashHorizontalSpeed);
         }
 
-        dashVector += Vector3.up * dashheight;
-        accumulatedRotations *= Quaternion.Euler(sideRotation * 90);
-        targetRotation = beforeRotation * Quaternion.Euler(sideRotation * 90);
-        //targetRotation =  Quaternion.FromToRotation(Vector3.up, sideRotation);
+        dashVector += Vector3.up * dashHeight;
+        rb.AddForce(dashVector, ForceMode.Impulse);
+
+        ChangeSideToRandom();
+
+        ShooterController.ChangeWeapon(_currentSideFacingTop);
     }
 
-    private void GetDamage() {
-    }
-
-    private void DashCoroutine() {
-        if (dashCurrentTime < dashTime) {
-            //dashVector.y = dashheight * Mathf.Cos(dashCurrentTime / dashTime);
-            float dashPercent = dashCurrentTime / dashTime;
-            move += dashVector * dashCurve.Evaluate(dashPercent);
-            body.transform.localRotation =
-                Quaternion.Slerp(beforeRotation, targetRotation, dashCurve.Evaluate(dashPercent));
-            dashCurrentTime += Time.deltaTime;
-        } else if (!isGrounded) {
-            move += dashVector;
-        } else {
-            body.transform.localRotation = targetRotation;
-            GetRotationFromSide();
-            ShooterController.ChangeWeapon(currentSideFacingTop);
-            isDashing = false;
-        }
-    }
-
-    private void GetRotationFromSide() {
-        float yPos = 0;
-        int index = 0;
-        foreach (Transform sideTransform in sides.Where(sideTransform => sideTransform.position.y > yPos)) {
-            index = sides.IndexOf(sideTransform);
-            yPos = sideTransform.position.y;
+    private void ChangeSideToRandom() {
+        body.transform.localRotation = bodyTargetRotation;
+        int curSide = Random.Range(0, 6);
+        while (curSide == _currentSideFacingTop) {
+            curSide = Random.Range(0, 6);
         }
 
-        currentSideFacingTop = index;
+        _currentSideFacingTop = curSide;
+        bodyTargetRotation = Quaternion.Euler(SidesRotation[_currentSideFacingTop]);
     }
-}
-
-[Serializable]
-public class Side {
-    public int[] neighbours = new[] {0, 0, 0, 0};
 }

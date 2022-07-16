@@ -285,7 +285,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4925,7 +4925,7 @@ Transform:
   m_GameObject: {fileID: 4759221898850071260}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.318, z: -0.693}
-  m_LocalScale: {x: 0.21909045, y: 0.21909045, z: 0.54323477}
+  m_LocalScale: {x: 0.04646102, y: 0.04646102, z: 0.115200095}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4759221899390470242}
@@ -5024,8 +5024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f7576b925c8c494199a3f269d4062db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 25
-  DestroyTime: 10
+  bulletSpeed: 15
+  DestroyTime: 5
   knockbackForce: 40
   enemyLayer:
     serializedVersion: 2
