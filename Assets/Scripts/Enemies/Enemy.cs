@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour {
     public float DamageRecall = 0.3f;
+    public float hp = 3;
 
     [SerializeField]
     protected NavMeshAgent navAgent;
@@ -14,6 +15,7 @@ public class Enemy : MonoBehaviour {
 
     [SerializeField]
     protected Rigidbody Rigidbody;
+
     public bool grounded = true;
 
     public void Init() {
@@ -38,52 +40,33 @@ public class Enemy : MonoBehaviour {
         grounded = false;
         SwitchToRigidBody();
         Rigidbody.AddForce(impulse, ForceMode.Impulse);
-        //StartCoroutine(GetDamage(impulse.magnitude));
     }
-
-   /* protected virtual IEnumerator GetDamage(float recallTime) {
-        navAgent.enabled = false;
-        yield return new WaitForSeconds(recallTime / 100);
-        navAgent.enabled = true;
-    }*/
 
     protected void SwitchToRigidBody() {
         navAgent.enabled = false;
-        /*if (navAgent.enabled)
-        {
-            // set the agents target to where you are before the jump
-            // this stops her before she jumps. Alternatively, you could
-            // cache this value, and set it again once the jump is complete
-            // to continue the original move
-            //navAgent.SetDestination(PlayerController.BodyPosition);
-            // disable the agent
-            navAgent.updatePosition = false;
-            navAgent.updateRotation = false;
-            navAgent.isStopped = true;
-        }*/
-        // make the jump
         Rigidbody.isKinematic = false;
         Rigidbody.useGravity = true;
     }
 
     protected virtual void SwitchToNavMesh() {
         navAgent.enabled = true;
-        /*if (navAgent.enabled) {
-            Vector3 pos = transform.position;
-            navAgent.updatePosition = true;
-            navAgent.updateRotation = true;
-            navAgent.isStopped = false;
-            navAgent.Warp(pos);
-        }*/
         Rigidbody.isKinematic = true;
         Rigidbody.useGravity = false;
-       
     }
-    
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider != null && collision.collider.tag == "Ground")
-        {
+
+    public void TakeDamage(int amount) {
+        hp -= amount;
+        if (hp <= 0) {
+            Die();
+        }
+    }
+
+    public virtual void Die() {
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.collider != null && collision.collider.tag == "Ground") {
             if (!grounded) {
                 SwitchToNavMesh();
                 grounded = true;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1657598359974464372}
   - component: {fileID: 1657598359974464375}
   - component: {fileID: 1657598359974464374}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Model
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 1657598361487463663}
   - component: {fileID: 1657598361487463662}
   - component: {fileID: 1657598361487463661}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageRecall: 0.3
+  hp: 3
   navAgent: {fileID: 1657598361487463663}
   isAwake: 1
   Rigidbody: {fileID: 1657598361487463661}

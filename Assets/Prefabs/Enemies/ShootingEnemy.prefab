@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 969171239825415600}
   - component: {fileID: 969171239825415603}
   - component: {fileID: 6130049892431591854}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ShootingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageRecall: 0.3
+  hp: 3
   navAgent: {fileID: 969171239825415601}
   isAwake: 1
   Rigidbody: {fileID: 969171239825415603}
@@ -105,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageRecall: 0.3
+  hp: 3
   navAgent: {fileID: 969171239825415601}
   isAwake: 0
   Rigidbody: {fileID: 969171239825415603}
@@ -127,7 +129,7 @@ GameObject:
   - component: {fileID: 969171241269658154}
   - component: {fileID: 969171241269658153}
   - component: {fileID: 969171241269658152}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Model
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -222,7 +224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2252091241647128614}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ShootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +258,7 @@ GameObject:
   - component: {fileID: 6124492195790860591}
   - component: {fileID: 7700186346398265040}
   - component: {fileID: 7581486470232658054}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

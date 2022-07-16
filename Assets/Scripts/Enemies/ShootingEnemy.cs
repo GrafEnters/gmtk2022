@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootingEnemy : Enemy {
+    
+    [Header("Shooting")]
     public Bullet bullet;
     public Transform shootPoint;
 
