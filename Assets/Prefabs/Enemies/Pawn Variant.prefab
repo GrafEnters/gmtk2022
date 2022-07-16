@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 1705324974331375986, guid: 1c9f28b6e1af7eb4190df6c4fc4cf1b7, type: 3}
     - target: {fileID: 1657598361487463659, guid: 43e5cf36dd389e9468e52f3a06ec6abf, type: 3}
       propertyPath: m_Name
-      value: Pawn
+      value: Pawn Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1657598361487463660, guid: 43e5cf36dd389e9468e52f3a06ec6abf, type: 3}
       propertyPath: m_RootOrder
@@ -74,6 +74,10 @@ PrefabInstance:
     - target: {fileID: 1657598361487463663, guid: 43e5cf36dd389e9468e52f3a06ec6abf, type: 3}
       propertyPath: m_Speed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657598361487463663, guid: 43e5cf36dd389e9468e52f3a06ec6abf, type: 3}
+      propertyPath: m_BaseOffset
+      value: -0.06
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1657598359974464374, guid: 43e5cf36dd389e9468e52f3a06ec6abf, type: 3}
