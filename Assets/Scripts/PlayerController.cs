@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -82,7 +83,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void Dash() {
+    public void Dash() {
         isGrounded = false;
         Vector3 dashVector = Vector3.zero;
         if (Input.GetAxis("Vertical") != 0) {
@@ -127,5 +128,11 @@ public class PlayerController : MonoBehaviour {
         isGrounded = false;
         _hp--;
         UIManager.Instance.ChangeHp(_hp);
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.transform.CompareTag("Finish")) {
+            UIManager.Instance.YouWin();
+        }
     }
 }

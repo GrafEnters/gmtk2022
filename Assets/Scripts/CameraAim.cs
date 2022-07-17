@@ -48,6 +48,8 @@ public class CameraAim : MonoBehaviour {
             isAim = Input.GetMouseButton(1);
         }
     }
+    
+    
 
     void FixedUpdate() {
         Follow();

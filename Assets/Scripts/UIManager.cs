@@ -70,6 +70,10 @@ public class UIManager : MonoBehaviour {
     public void AddBullet() {
         Instantiate(curData.bulletPrefab, bulletsGrid.transform);
     }
+
+    public void YouWin() {
+        Debug.Log("You win!");
+    }
 }
 
 [Serializable]
