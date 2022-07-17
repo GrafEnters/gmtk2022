@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2355202061907333684, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6932100337936513446, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
       propertyPath: m_LocalScale.x
       value: 170
@@ -109,5 +113,6 @@ MonoBehaviour:
   isAwake: 0
   Rigidbody: {fileID: 6192319682233920729}
   grounded: 1
+  isStartAsNavAgent: 1
   EnemiesAmount: 5
   Enemy: {fileID: 7212112009912826791, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
