@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour {
     public Transform groundSphere;
 
     public Transform body;
-
+    private int _hp = 6;
     private int _currentSideFacingTop;
     private Vector3 _move;
     public bool isGrounded;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour {
     };
 
     private void Awake() {
+        _hp = 6;
         BodyPosition = body.transform.position;
         bodyTargetRotation = body.transform.localRotation;
     }
@@ -49,6 +51,11 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButton("Jump") && isGrounded) {
             Dash();
         }
+
+        if (Input.GetKeyDown(KeyCode.L)) {
+            TakeDamage(Vector3.up);
+        }
+
         BodyPosition = body.transform.position;
     }
 
@@ -59,7 +66,10 @@ public class PlayerController : MonoBehaviour {
         body.localRotation = Quaternion.Lerp(body.localRotation, bodyTargetRotation, 0.3f);
     }
 
+    private bool _cantMove;
     private void Move() {
+        if(_cantMove)
+            return;
         rb.AddForce(transform.right * (Input.GetAxis("Horizontal") * sideSpeed), ForceMode.VelocityChange);
         rb.AddForce(transform.forward * (Input.GetAxis("Vertical") * speed), ForceMode.VelocityChange);
         Vector3 horSpeed = rb.velocity;
@@ -73,6 +83,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Dash() {
+        isGrounded = false;
         Vector3 dashVector = Vector3.zero;
         if (Input.GetAxis("Vertical") != 0) {
             dashVector = transform.forward * (Input.GetAxis("Vertical") * dashHorizontalSpeed);
@@ -99,7 +110,22 @@ public class PlayerController : MonoBehaviour {
         bodyTargetRotation = Quaternion.Euler(SidesRotation[_currentSideFacingTop]);
     }
 
+    private bool Invisible = false;
+    private IEnumerator DamageRecall() {
+        _cantMove = true;
+        Invisible = true;
+        yield return new WaitForSeconds(0.3f);
+        Invisible = false;
+        _cantMove = false;
+    }
     public void TakeDamage(Vector3 from) {
-        
+        if (_hp <= 0 || Invisible)
+            return;
+
+        StartCoroutine(DamageRecall());
+        rb.AddForce(from + Vector3.up * 3.5f, ForceMode.Impulse);
+        isGrounded = false;
+        _hp--;
+        UIManager.Instance.ChangeHp(_hp);
     }
 }

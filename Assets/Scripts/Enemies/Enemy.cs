@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
     public float DamageRecall = 0.3f;
     public float hp = 3;
     public float DeaggroDistance = 40f;
+    public float knockBack = 4;
 
     [SerializeField]
     protected NavMeshAgent navAgent;
@@ -71,11 +72,17 @@ public class Enemy : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if (collision.collider != null && collision.collider.tag == "Ground") {
+        if (collision.collider != null && collision.collider.CompareTag("Ground")) {
             if (!grounded) {
                 SwitchToNavMesh();
                 grounded = true;
             }
+        }
+
+        if (collision.collider != null && collision.collider.CompareTag("Player")) {
+            Vector3 knockbackVector = collision.transform.position - transform.position;
+            knockbackVector.y = 0;
+            collision.gameObject.GetComponent<PlayerController>().TakeDamage(knockbackVector.normalized * 7);
         }
     }
 
@@ -85,9 +92,9 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-   /* private void OnTriggerExit(Collider other) {
-        if (other.gameObject.CompareTag("Player")) {
-            isAwake = false;
-        }
-    }*/
+    /* private void OnTriggerExit(Collider other) {
+         if (other.gameObject.CompareTag("Player")) {
+             isAwake = false;
+         }
+     }*/
 }
