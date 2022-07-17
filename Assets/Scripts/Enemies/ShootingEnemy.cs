@@ -14,9 +14,10 @@ public class ShootingEnemy : Enemy {
     public float directionRandomness = 0.25f;
     public float bulletsInPackAmount = 5;
 
+    private bool canShoot;
     protected override void Update() {
         base.Update();
-        if(isAwake) {
+        if(isAwake && canShoot) {
             if (currentDelay > shootDelayTime) {
                 currentDelay = 0;
                 Shoot();
@@ -24,6 +25,16 @@ public class ShootingEnemy : Enemy {
                 currentDelay += Time.deltaTime;
             }
         }
+    }
+
+    public override void AddImpulse(Vector3 impulse) {
+        base.AddImpulse(impulse);
+        canShoot = false;
+    }
+
+    protected override void SwitchToNavMesh() {
+        base.SwitchToNavMesh();
+        canShoot = true;
     }
 
     private void Shoot() {
