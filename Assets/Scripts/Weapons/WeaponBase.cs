@@ -5,6 +5,7 @@ public abstract class WeaponBase : MonoBehaviour {
     [SerializeField]
     protected Bullet Bullet;
 
+    [HideInInspector]
     public int bulletsAmount = 1;
     public int maxBulletsAmount = 1;
     public float recallTime = 0.3f;

@@ -1731,7 +1731,7 @@ MonoBehaviour:
   recallTime: 0.3
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 2113
   maxDistance: 50
   impulsePower: 30
 --- !u!4 &204682825
@@ -12346,8 +12346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 3666258606935125104, guid: d1a308d5e3d909548a82bb6811503292, type: 3}
-  bulletsAmount: 1
-  maxBulletsAmount: 1
+  bulletsAmount: 3
+  maxBulletsAmount: 3
   recallTime: 0.3
   enemyLayer:
     serializedVersion: 2
@@ -14541,7 +14541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 775870575645893910, guid: 220df57ecb61e504db3a6b7d6fccb2ef, type: 3}
   bulletsAmount: 0
-  maxBulletsAmount: 3
+  maxBulletsAmount: 6
   recallTime: 0.5
 --- !u!64 &1517308517
 MeshCollider:

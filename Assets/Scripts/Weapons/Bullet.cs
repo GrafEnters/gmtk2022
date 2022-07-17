@@ -4,7 +4,7 @@ public class Bullet : MonoBehaviour {
     public float bulletSpeed = 25;
     public float DestroyTime = 10;
     public float knockbackForce = 3f;
-    public int Damage = 1;
+    public float Damage = 1;
     public bool isEnemy;
     
     private Vector3 _direction;
