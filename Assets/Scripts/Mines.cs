@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mines : WeaponBase
 {
    protected override void ShootAbility(Ray ray) {
+      base.ShootAbility(ray);
       Instantiate(Bullet, ray.origin, Quaternion.LookRotation(ray.direction), ShooterController.BulletsHolder);
    }
 }

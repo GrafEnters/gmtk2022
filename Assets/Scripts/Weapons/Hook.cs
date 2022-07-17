@@ -10,6 +10,7 @@ public class Hook : WeaponBase {
     public float impulsePower = 50;
 
     protected override void ShootAbility(Ray ray) {
+        base.ShootAbility(ray);
         if (Physics.Raycast(ray, out RaycastHit info, maxDistance, enemyLayer)) {
             if (info.transform.gameObject.TryGetComponent(out Enemy enemyComponent)) {
                 enemyComponent.AddImpulse(ray.direction * (-1 * impulsePower));

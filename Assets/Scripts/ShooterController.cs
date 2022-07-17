@@ -67,6 +67,7 @@ public class ShooterController : MonoBehaviour {
     public void ChangeWeapon(int weaponIndex) {
         curWeapon = weapons[weaponIndex];
         curWeapon.Equip();
+        UIManager.Instance.ChangeWeapon(weaponIndex);
     }
 
     private void DrawLine(Ray ray) {

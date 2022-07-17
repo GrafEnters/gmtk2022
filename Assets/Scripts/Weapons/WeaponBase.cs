@@ -1,24 +1,23 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class WeaponBase : MonoBehaviour {
     [SerializeField]
     protected Bullet Bullet;
-    
-  
+
     public int bulletsAmount = 1;
     public int maxBulletsAmount = 1;
     public float recallTime = 0.3f;
-    
-    private bool canShoot;
+
+    private bool _canShoot;
 
     public void Equip() {
-        canShoot = true;
+        _canShoot = true;
         Reload();
     }
+
     public void Shoot(Ray ray) {
-        if (canShoot && bulletsAmount>0) {
+        if (_canShoot && bulletsAmount > 0) {
             ShootAbility(ray);
             bulletsAmount--;
             bulletsAmount = Mathf.Max(0, bulletsAmount);
@@ -27,16 +26,16 @@ public abstract class WeaponBase : MonoBehaviour {
     }
 
     protected virtual void ShootAbility(Ray ray) {
-        
+        UIManager.Instance.Shoot();
     }
 
-    public IEnumerator Recall() {
-        canShoot = false;
+    private IEnumerator Recall() {
+        _canShoot = false;
         yield return new WaitForSeconds(recallTime);
-        canShoot = true;
+        _canShoot = true;
     }
-    
-    public void Reload() {
+
+    private void Reload() {
         bulletsAmount = maxBulletsAmount;
     }
 }

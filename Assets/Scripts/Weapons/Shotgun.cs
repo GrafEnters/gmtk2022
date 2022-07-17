@@ -8,6 +8,7 @@ public class Shotgun : WeaponBase {
     public float bulletsInPackAmount = 5;
 
     protected override void ShootAbility(Ray ray) {
+        base.ShootAbility(ray);
         for (int i = 0; i < bulletsInPackAmount; i++) {
             Bullet shootedBullet = Instantiate(Bullet, ray.origin, Quaternion.LookRotation(ray.direction), ShooterController.BulletsHolder);
             shootedBullet.ShootMe(ray.direction + Random.insideUnitSphere.normalized * directionRandomness);
