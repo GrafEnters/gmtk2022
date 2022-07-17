@@ -75,6 +75,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 1.1932312e-16
       objectReference: {fileID: 0}
+    - target: {fileID: 1980655900199025198, guid: ed1215ce1de32184a8a4865456d830a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6d86da4e5e2134a489666d6f68b5c933, type: 2}
     - target: {fileID: 1980655900199025199, guid: ed1215ce1de32184a8a4865456d830a1, type: 3}
       propertyPath: m_Mesh
       value: 

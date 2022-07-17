@@ -4878,7 +4878,7 @@ MonoBehaviour:
   bulletSpeed: 5
   DestroyTime: 5
   knockbackForce: 60
-  Damage: 2
+  Damage: 5
   isEnemy: 0
   enemyLayer:
     serializedVersion: 2

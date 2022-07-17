@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6130049892431591854, guid: 7d3faa13113bca94394707b90f058cda, type: 3}
+      propertyPath: DeaggroDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7761924051477885351, guid: 7d3faa13113bca94394707b90f058cda, type: 3}
       propertyPath: m_Layer
       value: 2
