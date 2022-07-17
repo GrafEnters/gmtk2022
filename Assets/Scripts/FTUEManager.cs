@@ -21,6 +21,8 @@ public class FTUEManager : MonoBehaviour {
 
     private bool isGameStarted;
 
+    public Animation ftueExplainAnimation;
+
     private void Awake() {
         cameraTransform = Camera.main.transform;
         StopGame();
@@ -34,6 +36,8 @@ public class FTUEManager : MonoBehaviour {
     }
 
     private void StopGame() {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         VerticalMouseLook.enabled = false;
         HorizontalMouseLook.enabled = false;
         CameraAim.enabled = false;
@@ -48,6 +52,7 @@ public class FTUEManager : MonoBehaviour {
         CameraAim.enabled = true;
         ShooterController.lockShooting = false;
         Interface.SetActive(true);
+        ftueExplainAnimation.Play("show_ExplainDialog");
     }
 
     private IEnumerator MoveDreamGame() {

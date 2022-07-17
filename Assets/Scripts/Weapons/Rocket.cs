@@ -16,6 +16,8 @@ public class Rocket : Bullet
         foreach (Collider enemyCollider in colliders) {
             if(enemyCollider.gameObject.TryGetComponent(out Enemy enemy)) {
                 enemy.AddImpulse((enemy.transform.position - transform.position).normalized * knockbackForce);
+                enemy.TakeDamage(Damage);
+                
             }
         }
         GameObject ex = Instantiate(explosion, transform.position, Quaternion.identity);

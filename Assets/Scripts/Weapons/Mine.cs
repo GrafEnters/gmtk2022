@@ -17,6 +17,7 @@ public class Mine : Bullet {
       if (collision.gameObject.TryGetComponent(out Enemy enemy)) {
          Debug.Log("Hitted enemy");
          enemy.AddImpulse((enemy.transform.position - transform.position).normalized * knockbackForce);
+         enemy.TakeDamage(Damage);
          GameObject ex = Instantiate(explosion, transform.position, Quaternion.identity);
          Destroy(ex, 2f);
          Destroy(gameObject);
