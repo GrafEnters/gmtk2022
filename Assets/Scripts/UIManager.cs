@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour {
 
     private Animation _weaponAnimation;
     private WeaponUIData curData;
+    public Animation winAnimation;
 
     private void Awake() {
         Instance = this;
@@ -73,6 +74,7 @@ public class UIManager : MonoBehaviour {
 
     public void YouWin() {
         Debug.Log("You win!");
+        winAnimation.Play("show_ExplainDialog");
     }
 }
 
