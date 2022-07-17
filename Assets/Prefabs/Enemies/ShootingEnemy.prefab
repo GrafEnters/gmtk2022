@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 969171239825415602}
   - component: {fileID: 969171239825415601}
-  - component: {fileID: 969171239825415600}
   - component: {fileID: 969171239825415603}
   - component: {fileID: 6130049892431591854}
   m_Layer: 11
@@ -60,24 +59,6 @@ NavMeshAgent:
   m_BaseOffset: 0.14
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &969171239825415600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969171239825415605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd2c40c7aa817de4b9cdae57e6eeed2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DamageRecall: 0.3
-  hp: 3
-  navAgent: {fileID: 969171239825415601}
-  isAwake: 0
-  Rigidbody: {fileID: 969171239825415603}
-  grounded: 1
 --- !u!54 &969171239825415603
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -108,6 +89,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageRecall: 0.3
   hp: 3
+  DeaggroDistance: 40
+  knockBack: 4
   navAgent: {fileID: 969171239825415601}
   isAwake: 0
   Rigidbody: {fileID: 969171239825415603}
