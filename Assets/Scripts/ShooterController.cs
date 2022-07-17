@@ -6,15 +6,20 @@ using UnityEngine;
 public class ShooterController : MonoBehaviour {
     public static ShooterController instance;
     
+    public float maxTargetDistance = 100;
+    
+    [SerializeField]
+    private Transform _weaponHolder;
     [SerializeField]
     private Transform _bulletsHolder;
-
+  
+    private Animation _currentWeaponInHand;
     [SerializeField]
     private Transform _shootPoint;
 
     public static Transform BulletsHolder;
 
-    public float maxTargetDistance = 100;
+   
 
     [SerializeField]
     protected LayerMask shootMask;
@@ -22,6 +27,7 @@ public class ShooterController : MonoBehaviour {
     [SerializeField]
     private WeaponBase[] weapons;
 
+    [HideInInspector]
     public WeaponBase curWeapon;
     public Transform TargetTransform;
     [SerializeField]
@@ -29,31 +35,35 @@ public class ShooterController : MonoBehaviour {
 
     public bool canChangeByNumbers = false;
     public bool lockShooting = false;
+    
+    private  const string SHOOT_ANIMATION = "weaponInHand_shoot";
     private void Awake() {
         BulletsHolder = _bulletsHolder;
         instance = this;
     }
 
+    private void MoveTarget() {
+        Vector3 target;
+        Ray raycastRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(raycastRay, out RaycastHit info, maxTargetDistance, shootMask)) {
+            target = info.point;
+        } else {
+            target = raycastRay.GetPoint(maxTargetDistance);
+        }
+
+        TargetTransform.position = target;
+        TargetTransform.forward = raycastRay.direction; 
+    }
+    
     void Update() {
         if(lockShooting)
             return;
+
+        MoveTarget();
         if (Input.GetMouseButton(0)) {
-            Vector3 target;
-            Ray raycastRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(raycastRay, out RaycastHit info, maxTargetDistance, shootMask)) {
-                target = info.point;
-            } else {
-                target = raycastRay.GetPoint(maxTargetDistance);
-            }
-
-            TargetTransform.position = target;
-            TargetTransform.forward = raycastRay.direction;
-
             Ray shootRay = new(_shootPoint.position, TargetTransform.position - _shootPoint.position);
-           
-            //DrawLine(shootRay);
-            
             curWeapon.Shoot(shootRay);
+            _currentWeaponInHand.Play(SHOOT_ANIMATION);
         }
 
         if (canChangeByNumbers) {
@@ -71,6 +81,10 @@ public class ShooterController : MonoBehaviour {
         curWeapon = weapons[weaponIndex];
         curWeapon.Equip();
         UIManager.Instance.ChangeWeapon(weaponIndex);
+        if (_currentWeaponInHand != null) {
+            Destroy(_currentWeaponInHand.gameObject);
+        }
+        _currentWeaponInHand = Instantiate(curWeapon.WeaponPrefab, _weaponHolder);
     }
 
     private void DrawLine(Ray ray) {

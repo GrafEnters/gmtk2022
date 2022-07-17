@@ -2,6 +2,9 @@ using System.Collections;
 using UnityEngine;
 
 public abstract class WeaponBase : MonoBehaviour {
+
+    public Animation WeaponPrefab;
+    
     [SerializeField]
     protected Bullet Bullet;
 
