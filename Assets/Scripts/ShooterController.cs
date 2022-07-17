@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShooterController : MonoBehaviour {
+    public static ShooterController instance;
+    
     [SerializeField]
     private Transform _bulletsHolder;
 
@@ -29,6 +31,7 @@ public class ShooterController : MonoBehaviour {
     public bool lockShooting = false;
     private void Awake() {
         BulletsHolder = _bulletsHolder;
+        instance = this;
     }
 
     void Update() {
@@ -54,12 +57,12 @@ public class ShooterController : MonoBehaviour {
         }
 
         if (canChangeByNumbers) {
-            if (Input.GetKeyDown(KeyCode.Alpha0)) ChangeWeapon(0);
-            if (Input.GetKeyDown(KeyCode.Alpha1)) ChangeWeapon(1);
-            if (Input.GetKeyDown(KeyCode.Alpha2)) ChangeWeapon(2);
-            if (Input.GetKeyDown(KeyCode.Alpha3)) ChangeWeapon(3);
-            if (Input.GetKeyDown(KeyCode.Alpha4)) ChangeWeapon(4);
-            if (Input.GetKeyDown(KeyCode.Alpha5)) ChangeWeapon(5);
+            if (Input.GetKeyDown(KeyCode.Alpha1)) ChangeWeapon(0);
+            if (Input.GetKeyDown(KeyCode.Alpha2)) ChangeWeapon(1);
+            if (Input.GetKeyDown(KeyCode.Alpha3)) ChangeWeapon(2);
+            if (Input.GetKeyDown(KeyCode.Alpha4)) ChangeWeapon(3);
+            if (Input.GetKeyDown(KeyCode.Alpha5)) ChangeWeapon(4);
+            if (Input.GetKeyDown(KeyCode.Alpha6)) ChangeWeapon(5);
         }
      
     }
@@ -77,4 +80,7 @@ public class ShooterController : MonoBehaviour {
         _lineRenderer.SetPosition(0, ray.origin);
         _lineRenderer.SetPosition(1, ray.GetPoint(100));
     }
+
+    public int LeftAmmo =>  curWeapon.bulletsAmount;
+    
 }

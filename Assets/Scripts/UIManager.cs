@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour {
     public TextMeshProUGUI TimerText;
 
     private Animation _weaponAnimation;
+    private WeaponUIData curData;
 
     private void Awake() {
         Instance = this;
@@ -41,25 +42,39 @@ public class UIManager : MonoBehaviour {
     }
 
     public void ChangeWeapon(int newWeapon) {
-        return;
-        WeaponUIData curData = WeaponUIDatas[newWeapon];
+        curData = WeaponUIDatas[newWeapon];
         bulletsGrid.cellSize = curData.bulletSize;
+        foreach (Transform child in bulletsGrid.transform) {
+            Destroy(child.gameObject);
+        }
+
         if (WeaponHolder.childCount > 0) {
-            Destroy(WeaponHolder.GetChild(0));
+            Destroy(WeaponHolder.GetChild(0).gameObject);
+        }
+
+        for (int i = 0; i < ShooterController.instance.LeftAmmo; i++) {
+            Instantiate(curData.bulletPrefab, bulletsGrid.transform);
         }
 
         _weaponAnimation = Instantiate(curData.WeaponPrefab, WeaponHolder);
-        _weaponAnimation.Play("equip_animation");
+        //_weaponAnimation.Play("equip_animation");
     }
 
     public void Shoot() {
-        return;
-        _weaponAnimation.Play("shoot_animation");
+        if (bulletsGrid.transform.childCount > 0) {
+            Destroy(bulletsGrid.transform.GetChild(0).gameObject);
+        }
+        //_weaponAnimation.Play("shoot_animation");
+    }
+
+    public void AddBullet() {
+        Instantiate(curData.bulletPrefab, bulletsGrid.transform);
     }
 }
 
 [Serializable]
 public class WeaponUIData {
+    public GameObject bulletPrefab;
     public Animation WeaponPrefab;
     public Vector2 bulletSize;
 }
