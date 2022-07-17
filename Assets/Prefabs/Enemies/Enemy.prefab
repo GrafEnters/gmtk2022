@@ -176,6 +176,7 @@ MonoBehaviour:
   isAwake: 0
   Rigidbody: {fileID: 1657598361487463661}
   grounded: 1
+  isStartAsNavAgent: 1
 --- !u!54 &1657598361487463661
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -244,5 +245,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
