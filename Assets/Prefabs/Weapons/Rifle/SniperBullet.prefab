@@ -742,7 +742,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 250
   DestroyTime: 2
-  knockbackForce: 3
+  knockbackForce: 30
+  Damage: 5
+  isEnemy: 0
   _lineRenderer: {fileID: 5900279185144991694}
   LineDissapearTime: 0.3
 --- !u!54 &3734202096150099654

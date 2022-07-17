@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1705324974331375986, guid: 1c9f28b6e1af7eb4190df6c4fc4cf1b7, type: 3}
+    - target: {fileID: 1657598359974464375, guid: 43e5cf36dd389e9468e52f3a06ec6abf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 92df7f7ec8701474aa143ce9357050e2, type: 2}
     - target: {fileID: 1657598361487463659, guid: 43e5cf36dd389e9468e52f3a06ec6abf, type: 3}
       propertyPath: m_Name
       value: Pawn Variant

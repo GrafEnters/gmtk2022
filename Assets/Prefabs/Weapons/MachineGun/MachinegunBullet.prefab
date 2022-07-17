@@ -146,7 +146,7 @@ MonoBehaviour:
   bulletSpeed: 20
   DestroyTime: 2
   knockbackForce: 0.2
-  Damage: 0.2
+  Damage: 0.5
   isEnemy: 0
 --- !u!54 &1562814829287999580
 Rigidbody:

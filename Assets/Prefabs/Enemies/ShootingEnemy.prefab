@@ -89,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageRecall: 0.3
   hp: 3
-  DeaggroDistance: 40
+  DeaggroDistance: 5
   knockBack: 4
   navAgent: {fileID: 969171239825415601}
   isAwake: 0
@@ -366,5 +366,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 5.48
   m_Center: {x: 0, y: 0, z: 0}
