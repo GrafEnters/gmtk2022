@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7888648484529548985}
   - component: {fileID: 4836582484441906126}
   - component: {fileID: 5597591515897980857}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: AggroSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,9 +240,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageRecall: 0.3
   hp: 3
+  DeaggroDistance: 40
+  knockBack: 4
   navAgent: {fileID: 6516506102788920652}
   isAwake: 0
   Rigidbody: {fileID: 6516506102788920654}
   grounded: 1
   EnemiesAmount: 3
-  enemy: {fileID: 969171239825415605, guid: 7d3faa13113bca94394707b90f058cda, type: 3}
+  Enemy: {fileID: 0}

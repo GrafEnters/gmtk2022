@@ -68,6 +68,10 @@ PrefabInstance:
       value: Card Variant
       objectReference: {fileID: 0}
     - target: {fileID: 969171241269658153, guid: 7d3faa13113bca94394707b90f058cda, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 969171241269658153, guid: 7d3faa13113bca94394707b90f058cda, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 24073b4be0e95de4b92b91e6147576cf, type: 2}
@@ -131,6 +135,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7761924051477885351, guid: 7d3faa13113bca94394707b90f058cda, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 969171239825415600, guid: 7d3faa13113bca94394707b90f058cda, type: 3}
     - {fileID: 969171241269658152, guid: 7d3faa13113bca94394707b90f058cda, type: 3}
@@ -140,8 +148,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 969171241269658163, guid: 7d3faa13113bca94394707b90f058cda, type: 3}
   m_PrefabInstance: {fileID: 1702674582407828285}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1085003637494626944
-MeshCollider:
+--- !u!65 &5642119333320042559
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -150,7 +158,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8588455099340850026, guid: f45e678773249e34d9e840680cffa290, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.047937497, y: 0.0002827458, z: 0.06739159}
+  m_Center: {x: 0, y: 0.00000047683716, z: 0.000000059604645}

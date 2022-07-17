@@ -13,6 +13,7 @@ public class CameraAim : MonoBehaviour {
     public float PresitionMultiplierInAim = 3;
     public float SensivityLowerInAim = 0.3f;
     public float ClippingFixTries;
+    public float ClipSphereRadius = 0.1f;
 
     public bool isLockAim;
     public LayerMask clipMask;
@@ -46,8 +47,6 @@ public class CameraAim : MonoBehaviour {
         } else {
             isAim = Input.GetMouseButton(1);
         }
-
-        
     }
 
     void FixedUpdate() {
@@ -67,44 +66,43 @@ public class CameraAim : MonoBehaviour {
             targetRotation = NormalMode.rotation;
             verticalCameraRotation.SensivityMultiplier = 1;
             horizontalCameraRotation.SensivityMultiplier = 1;
-        
         }
+
         camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, targetPov, lerpSpeed);
 
         TryFixClip();
-        
+
         if (minDistance / (isAim ? PresitionMultiplierInAim : 1) <
             Vector3.Distance(cameraTransform.position, targetPosition))
-            cameraTransform.position = Vector3.Lerp(cameraTransform.position, targetPosition + clipOffset, lerpSpeed * (isAim? 2: 1));
+            cameraTransform.position = Vector3.Lerp(cameraTransform.position, targetPosition + clipOffset,
+                lerpSpeed * (isAim ? 2 : 1));
         if (minRotation / (isAim ? PresitionMultiplierInAim : 1) <
             Quaternion.Angle(cameraTransform.rotation, targetRotation))
-            cameraTransform.rotation = Quaternion.Lerp(cameraTransform.rotation, targetRotation, lerpSpeed * (isAim? 2 : 1));
+            cameraTransform.rotation =
+                Quaternion.Lerp(cameraTransform.rotation, targetRotation, lerpSpeed * (isAim ? 2 : 1));
     }
 
     private void TryFixClip() {
-        bool isClip = Physics.OverlapSphere(targetPosition, 0.2f,clipMask).Length > 0;
-        if(!isClip) {
+        bool isClip = Physics.OverlapSphere(targetPosition, ClipSphereRadius, clipMask).Length > 0;
+        if (!isClip) {
             clipOffset = Vector3.zero;
             return;
         }
-        
-        
+
         for (int i = 0; i < ClippingFixTries; i++) {
             Vector3 dir = PlayerController.BodyPosition - cameraTransform.position;
             targetPosition += dir * 1 / ClippingFixTries;
-            isClip = Physics.OverlapSphere(targetPosition, 0.2f,clipMask).Length > 0;
-            if (!isClip)
-               return;
-        }
-       /*clipOffset = Vector3.zero;
-        for (int i = 0; i < ClippingFixTries; i++) {
-            Vector3 dir = PlayerController.BodyPosition - cameraTransform.position;
-            clipOffset += dir * -1;
-            isClip = Physics.OverlapSphere(targetPosition + clipOffset, 0.1f).Length > 0;
+            isClip = Physics.OverlapSphere(targetPosition, ClipSphereRadius, clipMask).Length > 0;
             if (!isClip)
                 return;
-        }*/
+        }
+        /*clipOffset = Vector3.zero;
+         for (int i = 0; i < ClippingFixTries; i++) {
+             Vector3 dir = PlayerController.BodyPosition - cameraTransform.position;
+             clipOffset += dir * -1;
+             isClip = Physics.OverlapSphere(targetPosition + clipOffset, 0.1f).Length > 0;
+             if (!isClip)
+                 return;
+         }*/
     }
-    
-    
 }

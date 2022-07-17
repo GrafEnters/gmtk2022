@@ -47,16 +47,31 @@ public class Enemy : MonoBehaviour {
         SwitchToRigidBody();
         Rigidbody.AddForce(impulse, ForceMode.Impulse);
     }
+    
+    public void AddTorque(Vector3 impulse) {
+        Rigidbody.AddTorque(impulse, ForceMode.Impulse);
+    }
 
     protected void SwitchToRigidBody() {
         navAgent.enabled = false;
-        Rigidbody.isKinematic = false;
+        //Rigidbody.isKinematic = false;
         Rigidbody.useGravity = true;
+        if(_switchCoroutine!= null)
+            StopCoroutine(_switchCoroutine);
+        _switchCoroutine = StartCoroutine(SwithToNavMeshCoroutine());
+    }
+
+    private Coroutine _switchCoroutine;
+    private IEnumerator SwithToNavMeshCoroutine() {
+        yield return new WaitForSeconds(2);
+        SwitchToNavMesh();
     }
 
     protected virtual void SwitchToNavMesh() {
+        if(_switchCoroutine!= null)
+            StopCoroutine(_switchCoroutine);
         navAgent.enabled = true;
-        Rigidbody.isKinematic = true;
+        //Rigidbody.isKinematic = true;
         Rigidbody.useGravity = false;
     }
 

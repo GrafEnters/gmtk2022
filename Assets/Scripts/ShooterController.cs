@@ -12,8 +12,8 @@ public class ShooterController : MonoBehaviour {
     private Transform _weaponHolder;
     [SerializeField]
     private Transform _bulletsHolder;
-  
-    private Animation _currentWeaponInHand;
+  [HideInInspector]
+    public Animation currentWeaponInHand;
     [SerializeField]
     private Transform _shootPoint;
 
@@ -63,7 +63,7 @@ public class ShooterController : MonoBehaviour {
         if (Input.GetMouseButton(0)) {
             Ray shootRay = new(_shootPoint.position, TargetTransform.position - _shootPoint.position);
             curWeapon.Shoot(shootRay);
-            _currentWeaponInHand.Play(SHOOT_ANIMATION);
+            currentWeaponInHand.Play(SHOOT_ANIMATION);
         }
 
         if (canChangeByNumbers) {
@@ -81,10 +81,10 @@ public class ShooterController : MonoBehaviour {
         curWeapon = weapons[weaponIndex];
         curWeapon.Equip();
         UIManager.Instance.ChangeWeapon(weaponIndex);
-        if (_currentWeaponInHand != null) {
-            Destroy(_currentWeaponInHand.gameObject);
+        if (currentWeaponInHand != null) {
+            Destroy(currentWeaponInHand.gameObject);
         }
-        _currentWeaponInHand = Instantiate(curWeapon.WeaponPrefab, _weaponHolder);
+        currentWeaponInHand = Instantiate(curWeapon.WeaponPrefab, _weaponHolder);
     }
 
     private void DrawLine(Ray ray) {
@@ -93,6 +93,11 @@ public class ShooterController : MonoBehaviour {
         _lineRenderer.positionCount = 2;
         _lineRenderer.SetPosition(0, ray.origin);
         _lineRenderer.SetPosition(1, ray.GetPoint(100));
+    }
+
+    public void ReloadHook() {
+        curWeapon.Equip();
+        UIManager.Instance.AddBullet();
     }
 
     public int LeftAmmo =>  curWeapon.bulletsAmount;

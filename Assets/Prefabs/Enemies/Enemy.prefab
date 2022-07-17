@@ -170,6 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageRecall: 0.3
   hp: 3
+  DeaggroDistance: 40
+  knockBack: 4
   navAgent: {fileID: 1657598361487463663}
   isAwake: 0
   Rigidbody: {fileID: 1657598361487463661}
@@ -201,7 +203,7 @@ GameObject:
   - component: {fileID: 3575628436514002730}
   - component: {fileID: 1613551224298364033}
   - component: {fileID: 6313034742994264312}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: AggroSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

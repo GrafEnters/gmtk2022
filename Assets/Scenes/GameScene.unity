@@ -2462,6 +2462,7 @@ MonoBehaviour:
   maxTargetDistance: 100
   _weaponHolder: {fileID: 1190841693}
   _bulletsHolder: {fileID: 1945490450}
+  currentWeaponInHand: {fileID: 0}
   _shootPoint: {fileID: 413800205}
   shootMask:
     serializedVersion: 2
@@ -2506,7 +2507,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &274681791
 Transform:
   m_ObjectHideFlags: 0
@@ -9964,7 +9965,8 @@ MonoBehaviour:
   minRotation: 3
   PresitionMultiplierInAim: 6
   SensivityLowerInAim: 4
-  ClippingFixTries: 10
+  ClippingFixTries: 0
+  ClipSphereRadius: 0.1
   isLockAim: 0
   clipMask:
     serializedVersion: 2
