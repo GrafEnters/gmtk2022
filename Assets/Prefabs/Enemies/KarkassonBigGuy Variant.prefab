@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3881062150823922424
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6932100337936513446, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932100337936513446, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932100337936513446, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932100337936513467, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d2aa37f491ffe0746a64b6e7c2073597, type: 2}
+    - target: {fileID: 6932100339581888032, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932100339581888032, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -40.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932100339581888032, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932100339581888032, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 79.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932100339581888032, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932100339581888032, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932100339581888032, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932100339581888032, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932100339581888032, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932100339581888032, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932100339581888032, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932100339581888039, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_Name
+      value: KarkassonBigGuy Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7212112009912826791, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+--- !u!54 &6192319682233920729 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6932100339581888033, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+  m_PrefabInstance: {fileID: 3881062150823922424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &6192319682233920731 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 6932100339581888035, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+  m_PrefabInstance: {fileID: 3881062150823922424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6192319682233920735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6932100339581888039, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+  m_PrefabInstance: {fileID: 3881062150823922424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8540916656694430794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6192319682233920735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56f67a739a5f344fa21c445c42e8a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageRecall: 0.3
+  hp: 3
+  DeaggroDistance: 40
+  knockBack: 4
+  navAgent: {fileID: 6192319682233920731}
+  isAwake: 0
+  Rigidbody: {fileID: 6192319682233920729}
+  grounded: 1
+  EnemiesAmount: 5
+  Enemy: {fileID: 7212112009912826791, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}

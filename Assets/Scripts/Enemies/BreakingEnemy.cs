@@ -5,12 +5,14 @@ public class BreakingEnemy : Enemy {
     
     [Header("Breaking")]
     public int EnemiesAmount;
-    public GameObject enemy;
+    public Enemy Enemy;
 
     public override void Die() {
         base.Die();
         for (int i = 0; i < EnemiesAmount; i++) {
-            Instantiate(enemy, transform.position + Random.insideUnitSphere, Random.rotation);
+            Enemy enemy =  Instantiate(Enemy, transform.position + (Vector3.up*1f + Random.insideUnitSphere).normalized, Random.rotation);
+            enemy.AddImpulse(Vector3.up * 10);
+            enemy.isAwake = true;
         }
     }
 }

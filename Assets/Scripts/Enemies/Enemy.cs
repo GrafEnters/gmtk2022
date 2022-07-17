@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour {
     protected NavMeshAgent navAgent;
 
     [SerializeField]
-    protected bool isAwake = false;
+    public bool isAwake = false;
 
     [SerializeField]
     protected Rigidbody Rigidbody;
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour {
     }
 
     private void Start() {
-        SwitchToNavMesh();
+        //SwitchToNavMesh();
     }
 
     protected virtual void Update() {
