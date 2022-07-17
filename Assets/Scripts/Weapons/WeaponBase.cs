@@ -20,13 +20,16 @@ public abstract class WeaponBase : MonoBehaviour {
         Reload();
     }
 
-    public void Shoot(Ray ray) {
+    public bool Shoot(Ray ray) {
         if (_canShoot && bulletsAmount > 0) {
             ShootAbility(ray);
             bulletsAmount--;
             bulletsAmount = Mathf.Max(0, bulletsAmount);
             StartCoroutine(Recall());
+            return true;
         }
+
+        return false;
     }
 
     protected virtual void ShootAbility(Ray ray) {

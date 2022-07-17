@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour {
     public float DeaggroDistance = 40f;
     public float knockBack = 4;
 
+    public AudioClip damage, die;
+    public AudioSource source;
+
     [SerializeField]
     protected NavMeshAgent navAgent;
 
@@ -27,7 +30,7 @@ public class Enemy : MonoBehaviour {
     }
 
     private void Start() {
-        if(isStartAsNavAgent) {
+        if (isStartAsNavAgent) {
             SwitchToNavMesh();
         }
     }
@@ -58,7 +61,6 @@ public class Enemy : MonoBehaviour {
 
     protected void SwitchToRigidBody() {
         navAgent.enabled = false;
-        //Rigidbody.isKinematic = false;
         Rigidbody.useGravity = true;
         if (_switchCoroutine != null)
             StopCoroutine(_switchCoroutine);
@@ -76,15 +78,21 @@ public class Enemy : MonoBehaviour {
         if (_switchCoroutine != null)
             StopCoroutine(_switchCoroutine);
         navAgent.enabled = true;
-        //Rigidbody.isKinematic = true;
         Rigidbody.useGravity = false;
     }
 
     public void TakeDamage(float amount) {
+        if (hp <= 0)
+            return;
         hp -= amount;
         if (hp <= 0) {
+            source.clip = die;
             Die();
+        } else {
+            source.clip = damage;
         }
+        if(source)
+            source.Play();
     }
 
     public virtual void Die() {

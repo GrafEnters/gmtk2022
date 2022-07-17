@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8433b058-c346-4efa-99c6-5253056aad3c" name="Changes" comment="Enemies fixes" />
+    <list default="true" id="8433b058-c346-4efa-99c6-5253056aad3c" name="Changes" comment="Invis walls">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.gmtk2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.gmtk2022/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BreakingEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BreakingEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/JumpingEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/JumpingEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/ShootingEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/ShootingEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/General/DreamGame.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/General/DreamGame.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene/ReflectionProbe-0.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene/ReflectionProbe-0.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShooterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShooterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,25 +35,121 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/40205bb2cb25478a9cb0f5e54cf11441157400/b2/a9fefc79/Ray.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aa9287c39c4b4e86befb8902d5dae98d1a000/06/123eba06/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/ChessWorld/Horse.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Enemies/Knight Variant.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Enemies/Pawn Variant.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Art/1.png.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Art/2.png.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Art/3.png.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Art/4.png.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Art/5.png.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Art/6.png.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Art/Materials/Images/Monopoly.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Enemies/BreakingEnemy.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Enemies/Card Variant.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Enemies/Enemy.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Enemies/EnemyBullet.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Enemies/JumpingEnemy.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Enemies/ShootingEnemy.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Enemies/ShootingEnemy.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/General/DreamGame.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/UI/Hook.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/UI/Hook.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/UI/Machinegun.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/UI/Machinegun.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/UI/Mines.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/UI/Mines.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/UI/Rifle.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/UI/Rifle.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/UI/RocketLauncher.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/UI/RocketLauncher.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/UI/ShotgunUI.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/UI/ShotgunUI.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/Hook/HookInHand Variant.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/Hook/HookInHand Variant.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/MachineGun/MachinegunBullet.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/MachineGun/MachinegunInHand Variant.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/MachinegunBullet.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/Mine.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/Mines/Mine.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/Mines/Mine.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/Mines/MinesInHand Variant.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/Mines/MinesInHand Variant.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/Rifle/RifleInHand Variant.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/Rocket.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/RocketLauncher/Rocket.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/RocketLauncher/RocketLauncherInhand Variant.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/Shotgun/ShotgunBullet.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/Shotgun/ShotgunInHand Variant.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/ShotgunBullet.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene/LightingData.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene/LightingData.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene/LightingData.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene/LightingData.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene/LightingData.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene/NavMesh.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/TestScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/TestScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/TestScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraAim.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/CameraAim.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/CameraAim.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/CameraAim.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/BreakingEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/Enemies/BreakingEnemy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/Enemies/Enemy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/Enemies/Enemy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/Enemies/Enemy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/Enemies/Enemy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/Enemies/ShootingEnemy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/Enemies/ShootingEnemy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/ShootingEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/FTUEManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/FTUEManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FTUEManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HookInHand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LineUpdater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MouseLook.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/MouseLook.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ReloadSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RocketLauncher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/ShooterController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ShooterController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/ShooterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/ShooterController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SniperRifle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/SniperRifle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/UIManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/UIManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/UIManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/Weapons/Bullet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/BulletWithRay.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/Weapons/Hook.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/Hook.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/Machinegun.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/Weapons/Mine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/Rocket.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/Weapons/Rocket.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/Weapons/WeaponBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scripts/Weapons/WeaponBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeaponsHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Unity Projects/gmtk2022/ProjectSettings/DynamicsManager.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity Projects/gmtk2022/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity Projects/gmtk2022/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/ProjectSettings/RiderScriptEditorPersistedState.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/ProjectSettings/RiderScriptEditorPersistedState.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/ProjectSettings/RiderScriptEditorPersistedState.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -77,10 +191,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="26884">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="26884" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -102,7 +216,8 @@
       <workItem from="1657923241639" duration="22584000" />
       <workItem from="1657964484016" duration="31155000" />
       <workItem from="1658000519676" duration="103000" />
-      <workItem from="1658000688250" duration="507000" />
+      <workItem from="1658000688250" duration="13854000" />
+      <workItem from="1658051001431" duration="25657000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1657845798928</created>
@@ -174,7 +289,161 @@
       <option name="project" value="LOCAL" />
       <updated>1658001176300</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Final models&#10;&#10;+ materials">
+      <created>1658001796706</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1658001796706</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Very final">
+      <created>1658002007283</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1658002007283</updated>
+    </task>
+    <task id="LOCAL-00013" summary="ShootingEnemy">
+      <created>1658007929011</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1658007929011</updated>
+    </task>
+    <task id="LOCAL-00014" summary="BreakingEnemy">
+      <created>1658009197503</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1658009197503</updated>
+    </task>
+    <task id="LOCAL-00015" summary="AggroZones">
+      <created>1658010385315</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1658010385315</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Upgrade Scene">
+      <created>1658012321555</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1658012321555</updated>
+    </task>
+    <task id="LOCAL-00017" summary="TakingDamage">
+      <created>1658017015964</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1658017015964</updated>
+    </task>
+    <task id="LOCAL-00018" summary="UI damage &amp; staff">
+      <created>1658018684697</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1658018684697</updated>
+    </task>
+    <task id="LOCAL-00019" summary="KarkassonGuys">
+      <created>1658051470980</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1658051470980</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Monopoly &amp; cards">
+      <created>1658053951700</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1658053951700</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Interface weapons">
+      <created>1658055266394</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1658055266394</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fixed weapons damage">
+      <created>1658055678053</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1658055678053</updated>
+    </task>
+    <task id="LOCAL-00023" summary="WeaponsInHand organized &amp; prepare for animations">
+      <created>1658057592078</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1658057592078</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Clipping tryFix">
+      <created>1658062376814</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1658062376814</updated>
+    </task>
+    <task id="LOCAL-00025" summary="WeaponModels &amp; environment">
+      <created>1658063819361</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1658063819361</updated>
+    </task>
+    <task id="LOCAL-00026" summary="many fixes">
+      <created>1658067946306</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1658067946306</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Ftue">
+      <created>1658072756848</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1658072756848</updated>
+    </task>
+    <task id="LOCAL-00028" summary="FtueExplain">
+      <created>1658073606766</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1658073606766</updated>
+    </task>
+    <task id="LOCAL-00029" summary="fixed shooting">
+      <created>1658073733114</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1658073733114</updated>
+    </task>
+    <task id="LOCAL-00030" summary="dont shoot after damage">
+      <created>1658073812151</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1658073812151</updated>
+    </task>
+    <task id="LOCAL-00031" summary="FinishGame">
+      <created>1658074251168</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1658074251168</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Invis walls">
+      <created>1658076052467</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1658076052467</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,17 +465,32 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="initial commit" />
-    <MESSAGE value="Movement &amp; guns" />
-    <MESSAGE value="copied test scene to main &amp; added frags" />
-    <MESSAGE value="Fixed some bugs, added FtueManager" />
-    <MESSAGE value="JumpingEnemy" />
-    <MESSAGE value="Models &amp; fixes" />
-    <MESSAGE value="Enemies fixed &amp; ChessWorld" />
     <MESSAGE value="Collisions" />
     <MESSAGE value="+some models&#10;&#10;Лошадка + лужа" />
     <MESSAGE value="Enemies fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enemies fixes" />
+    <MESSAGE value="Final models&#10;&#10;+ materials" />
+    <MESSAGE value="Very final" />
+    <MESSAGE value="ShootingEnemy" />
+    <MESSAGE value="BreakingEnemy" />
+    <MESSAGE value="AggroZones" />
+    <MESSAGE value="Upgrade Scene" />
+    <MESSAGE value="TakingDamage" />
+    <MESSAGE value="UI damage &amp; staff" />
+    <MESSAGE value="KarkassonGuys" />
+    <MESSAGE value="Monopoly &amp; cards" />
+    <MESSAGE value="Interface weapons" />
+    <MESSAGE value="Fixed weapons damage" />
+    <MESSAGE value="WeaponsInHand organized &amp; prepare for animations" />
+    <MESSAGE value="Clipping tryFix" />
+    <MESSAGE value="WeaponModels &amp; environment" />
+    <MESSAGE value="many fixes" />
+    <MESSAGE value="Ftue" />
+    <MESSAGE value="FtueExplain" />
+    <MESSAGE value="fixed shooting" />
+    <MESSAGE value="dont shoot after damage" />
+    <MESSAGE value="FinishGame" />
+    <MESSAGE value="Invis walls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Invis walls" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

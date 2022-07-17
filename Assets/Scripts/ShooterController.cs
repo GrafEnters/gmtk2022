@@ -1,25 +1,26 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShooterController : MonoBehaviour {
     public static ShooterController instance;
-    
+
     public float maxTargetDistance = 100;
-    
+
     [SerializeField]
     private Transform _weaponHolder;
+
     [SerializeField]
     private Transform _bulletsHolder;
-  [HideInInspector]
+
+    [HideInInspector]
     public Animation currentWeaponInHand;
+
     [SerializeField]
     private Transform _shootPoint;
 
     public static Transform BulletsHolder;
 
-   
+    public AudioClip shoot;
+    public AudioSource AudioSource;
 
     [SerializeField]
     protected LayerMask shootMask;
@@ -29,14 +30,17 @@ public class ShooterController : MonoBehaviour {
 
     [HideInInspector]
     public WeaponBase curWeapon;
+
     public Transform TargetTransform;
+
     [SerializeField]
     private LineRenderer _lineRenderer;
 
     public bool canChangeByNumbers = false;
     public bool lockShooting = false;
-    
-    private  const string SHOOT_ANIMATION = "weaponInHand_shoot";
+
+    private const string SHOOT_ANIMATION = "weaponInHand_shoot";
+
     private void Awake() {
         BulletsHolder = _bulletsHolder;
         instance = this;
@@ -52,17 +56,24 @@ public class ShooterController : MonoBehaviour {
         }
 
         TargetTransform.position = target;
-        TargetTransform.forward = raycastRay.direction; 
+        TargetTransform.forward = raycastRay.direction;
     }
-    
+
     void Update() {
-        if(lockShooting)
+        if (lockShooting)
             return;
 
         MoveTarget();
         if (Input.GetMouseButton(0)) {
-            Ray shootRay = new(_shootPoint.position, TargetTransform.position - _shootPoint.position);
-            curWeapon.Shoot(shootRay);
+            if (curWeapon.bulletsAmount > 0) {
+                Ray shootRay = new(_shootPoint.position, TargetTransform.position - _shootPoint.position);
+                if (curWeapon.Shoot(shootRay)) ;
+                {
+                    AudioSource.clip = shoot;
+                    AudioSource.Play();
+                }
+            }
+
             currentWeaponInHand.Play(SHOOT_ANIMATION);
         }
 
@@ -74,7 +85,6 @@ public class ShooterController : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Alpha5)) ChangeWeapon(4);
             if (Input.GetKeyDown(KeyCode.Alpha6)) ChangeWeapon(5);
         }
-     
     }
 
     public void ChangeWeapon(int weaponIndex) {
@@ -84,7 +94,10 @@ public class ShooterController : MonoBehaviour {
         if (currentWeaponInHand != null) {
             Destroy(currentWeaponInHand.gameObject);
         }
+
         currentWeaponInHand = Instantiate(curWeapon.WeaponPrefab, _weaponHolder);
+        //AudioSource.clip = equip;
+        AudioSource.Play();
     }
 
     private void DrawLine(Ray ray) {
@@ -100,6 +113,5 @@ public class ShooterController : MonoBehaviour {
         UIManager.Instance.AddBullet();
     }
 
-    public int LeftAmmo =>  curWeapon.bulletsAmount;
-    
+    public int LeftAmmo => curWeapon.bulletsAmount;
 }

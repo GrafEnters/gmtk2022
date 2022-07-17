@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour {
     public Rigidbody rb;
 
     public Quaternion bodyTargetRotation;
+    
+    public AudioClip dash, takeDamage;
+    public AudioSource AudioSource;
 
     private static readonly Vector3[] SidesRotation = new[] {
         Vector3.zero,
@@ -94,7 +97,8 @@ public class PlayerController : MonoBehaviour {
 
         dashVector += Vector3.up * dashHeight;
         rb.AddForce(dashVector, ForceMode.Impulse);
-
+        AudioSource.clip = dash;
+        AudioSource.Play();
         ChangeSideToRandom();
 
         ShooterController.ChangeWeapon(_currentSideFacingTop);
@@ -128,10 +132,12 @@ public class PlayerController : MonoBehaviour {
         isGrounded = false;
         _hp--;
         UIManager.Instance.ChangeHp(_hp);
+        AudioSource.clip = takeDamage;
+        AudioSource.Play();
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.transform.CompareTag("Finish")) {
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.transform.CompareTag("Finish")) {
             UIManager.Instance.YouWin();
         }
     }
