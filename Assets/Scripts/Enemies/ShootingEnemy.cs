@@ -16,11 +16,13 @@ public class ShootingEnemy : Enemy {
 
     protected override void Update() {
         base.Update();
-        if (currentDelay > shootDelayTime) {
-            currentDelay = 0;
-            Shoot();
-        } else {
-            currentDelay += Time.deltaTime;
+        if(isAwake) {
+            if (currentDelay > shootDelayTime) {
+                currentDelay = 0;
+                Shoot();
+            } else {
+                currentDelay += Time.deltaTime;
+            }
         }
     }
 
