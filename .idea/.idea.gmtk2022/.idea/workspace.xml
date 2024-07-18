@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8433b058-c346-4efa-99c6-5253056aad3c" name="Changes" comment="Invis walls">
+    <list default="true" id="8433b058-c346-4efa-99c6-5253056aad3c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.gmtk2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.gmtk2022/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BreakingEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BreakingEnemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/JumpingEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/JumpingEnemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/ShootingEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/ShootingEnemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/General/DreamGame.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/General/DreamGame.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Card Variant Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Card Variant Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Card Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Card Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/KarkassonBigGuy Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/KarkassonBigGuy Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/KarkassonGuy Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/KarkassonGuy Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Knight Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Knight Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Mines/Mine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Mines/Mine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/RocketLauncher/Rocket.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/RocketLauncher/Rocket.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene/ReflectionProbe-0.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene/ReflectionProbe-0.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraAim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraAim.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FTUEManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FTUEManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShooterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShooterController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Rocket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Rocket.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +33,10 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/40205bb2cb25478a9cb0f5e54cf11441157400/b2/a9fefc79/Ray.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aa9287c39c4b4e86befb8902d5dae98d1a000/06/123eba06/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Art/1.png.meta" root0="SKIP_HIGHLIGHTING" />
@@ -42,6 +46,7 @@
     <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Art/5.png.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Art/6.png.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Art/Materials/Images/Monopoly.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Enemies/BreakingEnemy.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Enemies/BreakingEnemy.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Enemies/Card Variant.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Enemies/Enemy.prefab" root0="SKIP_HIGHLIGHTING" />
@@ -79,6 +84,9 @@
     <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/Shotgun/ShotgunBullet.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/Shotgun/ShotgunInHand Variant.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Prefabs/Weapons/ShotgunBullet.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Unity Projects/gmtk2022/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
@@ -217,7 +225,7 @@
       <workItem from="1657964484016" duration="31155000" />
       <workItem from="1658000519676" duration="103000" />
       <workItem from="1658000688250" duration="13854000" />
-      <workItem from="1658051001431" duration="25657000" />
+      <workItem from="1658051001431" duration="29355000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1657845798928</created>
@@ -443,7 +451,21 @@
       <option name="project" value="LOCAL" />
       <updated>1658076052467</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="MyLastChanges">
+      <created>1658079763923</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1658079763923</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Last fixes ahaha">
+      <created>1658080025047</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1658080025047</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,8 +487,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Collisions" />
-    <MESSAGE value="+some models&#10;&#10;Лошадка + лужа" />
     <MESSAGE value="Enemies fixes" />
     <MESSAGE value="Final models&#10;&#10;+ materials" />
     <MESSAGE value="Very final" />
@@ -490,7 +510,9 @@
     <MESSAGE value="dont shoot after damage" />
     <MESSAGE value="FinishGame" />
     <MESSAGE value="Invis walls" />
-    <option name="LAST_COMMIT_MESSAGE" value="Invis walls" />
+    <MESSAGE value="MyLastChanges" />
+    <MESSAGE value="Last fixes ahaha" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last fixes ahaha" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

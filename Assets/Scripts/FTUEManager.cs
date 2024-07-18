@@ -22,6 +22,7 @@ public class FTUEManager : MonoBehaviour {
     private bool isGameStarted;
 
     public Animation ftueExplainAnimation;
+    public Animation anyButton;
 
     private void Awake() {
         cameraTransform = Camera.main.transform;
@@ -56,6 +57,7 @@ public class FTUEManager : MonoBehaviour {
     }
 
     private IEnumerator MoveDreamGame() {
+        anyButton.Play("hide");
         float curTime = 0;
         Vector3 startPos = DreamGame.position;
         Quaternion startrot = DreamGame.rotation;

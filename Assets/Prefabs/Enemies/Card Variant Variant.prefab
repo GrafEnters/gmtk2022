@@ -111,6 +111,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4806275820564720275, guid: 6b81353719fb2894084f07ae8fc28fd1, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 5926638648372607396, guid: 9080ea1414dcbde449ba4913f19334fa, type: 3}
+    - target: {fileID: 4806275820564720275, guid: 6b81353719fb2894084f07ae8fc28fd1, type: 3}
+      propertyPath: shootDelayTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806275820564720275, guid: 6b81353719fb2894084f07ae8fc28fd1, type: 3}
+      propertyPath: bulletsInPackAmount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806275820564720275, guid: 6b81353719fb2894084f07ae8fc28fd1, type: 3}
+      propertyPath: directionRandomness
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6226401550169643650, guid: 6b81353719fb2894084f07ae8fc28fd1, type: 3}
       propertyPath: m_Radius
       value: 10

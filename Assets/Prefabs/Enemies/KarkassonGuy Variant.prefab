@@ -89,12 +89,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1657598361487463663, guid: 43e5cf36dd389e9468e52f3a06ec6abf, type: 3}
       propertyPath: m_BaseOffset
-      value: -0.04
+      value: -0.08
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1657598359974464374, guid: 43e5cf36dd389e9468e52f3a06ec6abf, type: 3}
     - {fileID: 1657598361487463662, guid: 43e5cf36dd389e9468e52f3a06ec6abf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43e5cf36dd389e9468e52f3a06ec6abf, type: 3}
+--- !u!82 &5589719216954362497 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4224816709252626509, guid: 43e5cf36dd389e9468e52f3a06ec6abf, type: 3}
+  m_PrefabInstance: {fileID: 8589275342917497548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6932100337936513441 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1657598359974464365, guid: 43e5cf36dd389e9468e52f3a06ec6abf, type: 3}
@@ -145,7 +150,10 @@ MonoBehaviour:
   hp: 3
   DeaggroDistance: 40
   knockBack: 4
+  damage: {fileID: 8300000, guid: 32d0d632228d60346aa927e1a99c8f22, type: 3}
+  source: {fileID: 5589719216954362497}
   navAgent: {fileID: 6932100339581888035}
   isAwake: 0
   Rigidbody: {fileID: 6932100339581888033}
   grounded: 1
+  isStartAsNavAgent: 1

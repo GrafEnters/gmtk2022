@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour {
     public float DeaggroDistance = 40f;
     public float knockBack = 4;
 
-    public AudioClip damage, die;
+    public AudioClip damage;
     public AudioSource source;
 
     [SerializeField]
@@ -86,13 +86,13 @@ public class Enemy : MonoBehaviour {
             return;
         hp -= amount;
         if (hp <= 0) {
-            source.clip = die;
             Die();
-        } else {
-            source.clip = damage;
         }
-        if(source)
+
+        if (source) {
+            source.clip = damage;
             source.Play();
+        }
     }
 
     public virtual void Die() {

@@ -14,10 +14,9 @@ public class Rocket : Bullet
     protected override void OnCollisionEnter(Collision collision) {
         Collider[] colliders =  Physics.OverlapSphere(transform.position, SphereRadius, enemyLayer);
         foreach (Collider enemyCollider in colliders) {
-            if(enemyCollider.gameObject.TryGetComponent(out Enemy enemy)) {
+            if(enemyCollider.attachedRigidbody. gameObject.TryGetComponent(out Enemy enemy)) {
                 enemy.AddImpulse((enemy.transform.position - transform.position).normalized * knockbackForce);
                 enemy.TakeDamage(Damage);
-                
             }
         }
         GameObject ex = Instantiate(explosion, transform.position, Quaternion.identity);

@@ -140,6 +140,14 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6130049892431591854, guid: 7d3faa13113bca94394707b90f058cda, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 3664803512761279560, guid: dc270317d555780448b782f6f3123300, type: 3}
+    - target: {fileID: 6130049892431591854, guid: 7d3faa13113bca94394707b90f058cda, type: 3}
+      propertyPath: shootDelayTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130049892431591854, guid: 7d3faa13113bca94394707b90f058cda, type: 3}
       propertyPath: DeaggroDistance
       value: 30
       objectReference: {fileID: 0}

@@ -67,7 +67,7 @@ public class ShooterController : MonoBehaviour {
         if (Input.GetMouseButton(0)) {
             if (curWeapon.bulletsAmount > 0) {
                 Ray shootRay = new(_shootPoint.position, TargetTransform.position - _shootPoint.position);
-                if (curWeapon.Shoot(shootRay)) ;
+                if (curWeapon.Shoot(shootRay) && curWeapon) ;
                 {
                     AudioSource.clip = shoot;
                     AudioSource.Play();
@@ -76,7 +76,7 @@ public class ShooterController : MonoBehaviour {
 
             currentWeaponInHand.Play(SHOOT_ANIMATION);
         }
-
+        
         if (canChangeByNumbers) {
             if (Input.GetKeyDown(KeyCode.Alpha1)) ChangeWeapon(0);
             if (Input.GetKeyDown(KeyCode.Alpha2)) ChangeWeapon(1);
@@ -97,7 +97,7 @@ public class ShooterController : MonoBehaviour {
 
         currentWeaponInHand = Instantiate(curWeapon.WeaponPrefab, _weaponHolder);
         //AudioSource.clip = equip;
-        AudioSource.Play();
+        //AudioSource.Play();
     }
 
     private void DrawLine(Ray ray) {

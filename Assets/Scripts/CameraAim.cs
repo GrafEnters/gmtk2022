@@ -37,16 +37,17 @@ public class CameraAim : MonoBehaviour {
     private void Awake() {
         cameraTransform = Camera.main.transform;
         camera = Camera.main;
+        isAim = false;
     }
 
     private void Update() {
-        if (isLockAim) {
+       /* if (isLockAim) {
             if (Input.GetMouseButtonDown(1)) {
                 isAim = !isAim;
             }
         } else {
             isAim = Input.GetMouseButton(1);
-        }
+        }*/
     }
     
     

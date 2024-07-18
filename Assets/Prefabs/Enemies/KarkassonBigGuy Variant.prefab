@@ -71,6 +71,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6932100339581888035, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+      propertyPath: m_BaseOffset
+      value: -0.08
+      objectReference: {fileID: 0}
     - target: {fileID: 6932100339581888039, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
       propertyPath: m_Name
       value: KarkassonBigGuy Variant
@@ -109,6 +113,8 @@ MonoBehaviour:
   hp: 3
   DeaggroDistance: 40
   knockBack: 4
+  damage: {fileID: 8300000, guid: 32d0d632228d60346aa927e1a99c8f22, type: 3}
+  source: {fileID: 8669114227571523705}
   navAgent: {fileID: 6192319682233920731}
   isAwake: 0
   Rigidbody: {fileID: 6192319682233920729}
@@ -116,3 +122,8 @@ MonoBehaviour:
   isStartAsNavAgent: 1
   EnemiesAmount: 5
   Enemy: {fileID: 7212112009912826791, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+--- !u!82 &8669114227571523705 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5589719216954362497, guid: 23c35f8f0054bf741a4cb8c5810b622f, type: 3}
+  m_PrefabInstance: {fileID: 3881062150823922424}
+  m_PrefabAsset: {fileID: 0}

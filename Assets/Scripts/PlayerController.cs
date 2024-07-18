@@ -49,16 +49,18 @@ public class PlayerController : MonoBehaviour {
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
         ShooterController.ChangeWeapon(0);
+        canDash = true;
     }
 
     void Update() {
-        if (Input.GetButton("Jump") && isGrounded) {
+        if (Input.GetButton("Jump") && isGrounded && canDash) {
             Dash();
         }
 
+        /*
         if (Input.GetKeyDown(KeyCode.L)) {
             TakeDamage(Vector3.up);
-        }
+        }*/
 
         BodyPosition = body.transform.position;
     }
@@ -87,6 +89,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void Dash() {
+        StartCoroutine(DashCooldown());
         isGrounded = false;
         Vector3 dashVector = Vector3.zero;
         if (Input.GetAxis("Vertical") != 0) {
@@ -102,6 +105,13 @@ public class PlayerController : MonoBehaviour {
         ChangeSideToRandom();
 
         ShooterController.ChangeWeapon(_currentSideFacingTop);
+    }
+
+    private bool canDash = true;
+    private IEnumerator DashCooldown() {
+        canDash = false;
+        yield return new WaitForSeconds(0.2f);
+        canDash = true;
     }
 
     private void ChangeSideToRandom() {
