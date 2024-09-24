@@ -78,13 +78,13 @@ public class PlayerController : MonoBehaviour {
             return;
         rb.AddForce(transform.right * (Input.GetAxis("Horizontal") * sideSpeed), ForceMode.VelocityChange);
         rb.AddForce(transform.forward * (Input.GetAxis("Vertical") * speed), ForceMode.VelocityChange);
-        Vector3 horSpeed = rb.velocity;
+        Vector3 horSpeed = rb.linearVelocity;
         horSpeed.y = 0;
 
         if (horSpeed.magnitude > maxVelocity) {
             horSpeed = horSpeed.normalized * maxVelocity;
-            horSpeed.y = rb.velocity.y;
-            rb.velocity = horSpeed;
+            horSpeed.y = rb.linearVelocity.y;
+            rb.linearVelocity = horSpeed;
         }
     }
 
